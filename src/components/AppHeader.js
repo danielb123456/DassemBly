@@ -1,9 +1,17 @@
-import React from 'react';
+import React from 'react';  
+import './styles/AppHeader.css';
 
-function AppHeader(){
+function AppHeader({onCreatePost}){
     return(
         <header>
-            <h1>DassemBly</h1>       
+            <div className="headerContainer">
+                <h1 className="headerTitle">DassemBly</h1>
+                <button onClick={onCreatePost} className="createPostButton">
+                    Create Post
+                </button>    
+            </div>  
         </header>
     )
 }
+
+export default AppHeader;
