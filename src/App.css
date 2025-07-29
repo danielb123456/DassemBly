@@ -1,3 +1,70 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-input{
+  width: 200px;
+  padding: 10px;
+  margin: 2px 0;
+  padding: 10px;
+  font-family: Roboto, Arial, sans-serif;
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(255, 212, 133);
+  color: black;
+}
+
+.content-input {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  margin: 2px 0;
+  font-family: Roboto, Arial, sans-serif;
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(255, 212, 133);
+}
+
+.name-input {
+  width: 200px;
+  padding: 10px;
+  margin: 2px 0;
+  font-family: Roboto, Arial, sans-serif;
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(255, 212, 133);
+}
+
+.post-button{
+  width: 100px;
+  padding: 10px;
+  margin: 2px 0;
+  font-family: Roboto, Arial, sans-serif;
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(255, 212, 133);
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-button:hover {
+  background-color: rgb(255, 228, 200);
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  width: 300px;
+  align-items: center;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  background-color: orange;
+  margin: 20px 0;
 }

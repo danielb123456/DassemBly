@@ -10,7 +10,7 @@ function App() {
   const [form, setForm] = React.useState({ title: '', content: '', name: '' });
 
   const handleCreatePost = () => {
-    setShowForm(!showForm);
+    setShowForm(true);
   }
 
   const handleChange = (e) => {
@@ -28,8 +28,9 @@ function App() {
     <div className="App">
       <AppHeader onCreatePost={handleCreatePost} />
       {showForm && (
-        <form onSubmit={handleSubmit} style={{ margin: '20px 0' }}>
+        <form onSubmit={handleSubmit} className='post-form'>
           <input
+            className ="title-input"
             name="title"
             placeholder="Title"
             value={form.title}
@@ -38,14 +39,16 @@ function App() {
           />
           <br />
           <textarea
+            className ="content-input"
             name="content"
-            placeholder="Content"
+            placeholder="How do you feel?"
             value={form.content}
             onChange={handleChange}
             required
           />
           <br />
           <input
+            className = "name-input"
             name="name"
             placeholder="Your Name"
             value={form.name}
@@ -53,7 +56,7 @@ function App() {
             required
           />
           <br />
-          <button type="submit">Post</button>
+          <button type="submit" className="post-button">Post</button>
         </form>
       )}
       <Board posts={posts} />
