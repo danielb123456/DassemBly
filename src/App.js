@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import AppHeader from './components/AppHeader.js';
 import Board from './components/Board.js';
-import Post from './components/Post.js';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [showForm, setShowForm] = React.useState(false);
@@ -19,10 +19,15 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPosts([{ ...form }, ...posts]);
+    const newPost = {...form, id: uuidv4() };
+    setPosts([newPost, ...posts]);
     setForm({ title: '', content: '', name: '' });
     setShowForm(false);
   };
+
+  const handleDelete = (id) => {
+    setPosts(posts.filter(p => p.id !== id));
+  }
 
   return (
     <div className="App">
@@ -59,7 +64,7 @@ function App() {
           <button type="submit" className="post-button">Post</button>
         </form>
       )}
-      <Board posts={posts} />
+      <Board posts={posts} onDelete={handleDelete} />
     </div>
   );
 }

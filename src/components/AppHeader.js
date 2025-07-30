@@ -1,5 +1,5 @@
 import React from 'react';  
-import './styles/AppHeader.css';
+import '../styles/AppHeader.css';
 
 function AppHeader({onCreatePost}){
     return(
