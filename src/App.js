@@ -7,7 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
   const [showForm, setShowForm] = React.useState(false);
   const [posts, setPosts] = React.useState([]);
-  const [form, setForm] = React.useState({ title: '', content: '', name: '' });
+  const [form, setForm] = React.useState(
+    { title: '', 
+      content: '', 
+      name: '', 
+      image: '',
+    });
 
   const handleCreatePost = () => {
     setShowForm(true);
@@ -21,7 +26,7 @@ function App() {
     e.preventDefault();
     const newPost = {...form, id: uuidv4() };
     setPosts([newPost, ...posts]);
-    setForm({ title: '', content: '', name: '' });
+    setForm({ title: '', content: '', name: '', image: '' });
     setShowForm(false);
   };
 
@@ -61,6 +66,14 @@ function App() {
             required
           />
           <br />
+          <input
+            className = "image-input"
+            name="image"
+            placeholder="Image URL (optional)"
+            value={form.image}
+            onChange={handleChange}
+            type="url"
+          />
           <button type="submit" className="post-button">Post</button>
         </form>
       )}

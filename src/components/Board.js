@@ -3,6 +3,7 @@ import '../styles/Board.css';
 import Post from './Post.js';
 
 function Board( {posts, onDelete} ) {
+
     return (
         <div>
             {posts.map((post) => (
@@ -12,6 +13,8 @@ function Board( {posts, onDelete} ) {
                     content={post.content}
                     name={post.name}
                     id={post.id}
+                    image={post.image}
+                    comments={post.comments}
                     onDelete={onDelete}
                 />
             ))}
